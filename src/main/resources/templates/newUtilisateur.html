@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Liste des Utilisateurs</title>
+<link rel="stylesheet" href="../bootstrap1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../bootstrap1/js/bootstrap.js" />
+</head>
+<body>
+	<div>
+		<div>
+			<div class="col-lg-6 col-md-6 container justify-content-center card">
+				<h1 class="text-center">bindoul fi ci ben Niaaak</h1>
+				<div class="card-body">
+					<form th:action="@{/Utilisateur} " th:object="${utilisateur}" method="POST">
+						<div class="form-group">
+							<label>Bindal sa Sant</label> <input type="text" name="nom" th:field="*{nom}"
+								class="form-control" placeholder="sa Sant" />
+						</div>
+						<div class="form-group">
+							<label>Bindal sa tour</label> <input type="text" name="prenom" 
+							th:field="*{prenom}"
+								class="form-control" placeholder="sa tour" />
+						</div>
+						<div class="form-group">
+							<label>Bindal sa Deukouway</label> 
+							<input type="text"
+							th:field="*{adress}"
+								name="adress" class="form-control"
+								placeholder="sa deukou way wala sa makan" />
+						</div>
+						<div class="form-group">
+							<label>Bindal sa wowine</label>
+							 <input type="text" name="email"
+							 th:field="*{email}"
+								class="form-control" placeholder="sa wowine wala diokou kay" />
+						</div>
+						<div class="form-group">
+							<label>Bindal sa att</label> 
+							<input type="number" name="age"
+							th:field="*{age}"
+								class="form-control" placeholder="sa Att" />
+						</div>
+						<div class="box-footer col-lg-6">
+							<a th:href="@{/Utilisateur}" class="brn btn-outline-warning">Deup</a>
+							<button type="submit" class="brn btn-outline-primary">Djieuwrin
+								bou bess</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

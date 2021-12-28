@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Liste des Utilisateurs</title>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./bootstrap/js/bootstrap.min.js" />
+</head>
+<body style="bg-image:'/img/1.jpg'">
+	<div class="container my-2">
+		<div class="row">
+			<h1>Listes Des Utilisateurs</h1>
+		</div>
+		<div class="row">
+		<div class="col-lg-3">
+		
+			<a th:href="@{/Utilisateur/new}" class="btn btn-primary">
+				Dieuwrign Diou bess</a>
+		</div>
+		</div>
+	
+		<table class="table table-striped  ">
+
+			<thead class=" table  table-bordered table-primary">
+				<th>Sant</th>
+				<th>Tour</th>
+				<th>Boumou diok kay</th>
+				<th>deukouway</th>
+				<th>Att</th>
+				<th>Action</th>
+			</thead>
+			<tbody>
+				<tr th:each="utilisateur:${Utilisateurs}">
+					<td th:text="${utilisateur.nom}">Lamp</td>
+
+					<td th:text="${utilisateur.prenom}">Bamafa</td>
+					<td th:text="${utilisateur.email}">Papefam456@gmail.com</td>
+					<td th:text="${utilisateur.adress}">thies</td>
+					<td th:text="${utilisateur.age}">20</td>
+					<td><a th:href="@{/Utilisateur/edit/{id}(id=${utilisateur.id})}" class="btn btn-warning">
+					EDITER</a> <a th:href="@{/Utilisateur/delete/{id}(id=${utilisateur.id})}" 
+						class="btn btn-danger">DELETE</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
